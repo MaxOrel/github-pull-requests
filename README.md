@@ -7,17 +7,18 @@
 
 ## 1. Клонирование репозитория наставнка и создание своего
 
-Копируем адресс репозитория тип соединения не важен т.к. к моему репозиторию у вас доступа не будет. Но для своего репозитория о том как его настроить можете посмотреть тут https://youtu.be/MnU1U7GCWLk
+Копируем адрес репозитория тип соединения не важен т.к. к моему репозиторию у вас доступа не будет. Но для своего репозитория о том как его настроить можете посмотреть тут https://youtu.be/MnU1U7GCWLk
 
 ![Alt text](https://monosnap.com/image/05vq8WpL2a5ZHRI9Sz1LZ5NvyJ4RRA)
 
 Открываем терминал и заходим в папку с проектом
 
-Пишем (вместо адресса моего репозитория ставите то что скопировали):
+Пишем (если хотим склонировать проект со сборкой):
 ```{r, engine='bash', count_lines}
 git clone git@github.com:MaxOrel/BuilderBurger.git burger
 ```
-После чего в папке где вы сделали эту команду должны появиться папка со сборкой проекта
+
+После чего в папке, где вы сделали эту команду должны появиться папка со сборкой проекта
 
 ![Alt text](https://monosnap.com/image/ZysGjK2XswbNRSIkroUkSp3FYZ3had)
 
@@ -37,8 +38,9 @@ git clone git@github.com:MaxOrel/BuilderBurger.git burger
 
 Далее выполняем связь своего удаленного репозитория с этой папкой, но командой которая вам предлагается на gitHub этого не получится сделать, т.к. при клонировании репозитория вы автоматические локальный привязали к репозиторию наставника. Эту связь разрушаем командой
 ```{r, engine='bash', count_lines}
-git remote set-url origin git@github.com:MaxOrel/BuilderBurger.git
+git remote set-url origin git@github.com:unosmart/burger.git
 ```
+Где git@github.com:unosmart/burger.git - ваш репозиторий
 
 ![Alt text](https://monosnap.com/image/o2fkvG5YSy4QrxYZnIA5xpkjoURPFC)
 
@@ -46,7 +48,7 @@ git remote set-url origin git@github.com:MaxOrel/BuilderBurger.git
 ```{r, engine='bash', count_lines}
 git push -u origin master
 ```
-У вас запросит название аккаунта и пароль (если не подключен ssh), после корректного ввода произойдет загрузка файлов в ваш удаленный репозиторий.
+У Вас запросит название аккаунта и пароль (если не подключен ssh), после корректного ввода произойдет загрузка файлов в ваш удаленный репозиторий.
 
 ### 2.2 Создаем недельную ветку и начинаем разработку
 
@@ -90,6 +92,7 @@ git push -u origin week_1
 Для того чтобы показать работу настанику ее необходимо отобразить либо на хостинге, либо на Github Pages. Второй вариант предпочтительнее.
 
 Создаем новую ветку (ВАЖНО ветку создаем на удаленном репозитории и находиться нужно на ветке week_1) на github называем ее gh-pages
+
 ![Alt text](https://monosnap.com/file/1cZK9yuD5FPrkOuO6gSjWJFmZEex8o.png)
 ![Alt text](https://monosnap.com/file/ik7mdyA0ByFP8UghDbtrDObqVaEdjv.png)
 
