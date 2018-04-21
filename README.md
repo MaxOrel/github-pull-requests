@@ -5,47 +5,64 @@
 
 Инструкция проверена от начала и до конца и если в точности следовать тому, что здесь написано, у вас все получится.
 
-## 1. Создание репозитория
+## 1. Клонирование репозитория наставнка и создание своего
 
-Создаем новый репозиторий на github
+Копируем адресс репозитория тип соединения не важен т.к. к моему репозиторию у вас доступа не будет. Но для своего репозитория о том как его настроить можете посмотреть тут https://youtu.be/MnU1U7GCWLk
 
-![Alt text](https://monosnap.com/file/09RNBVaoUeAxVHKKB0v8eAjOZzDJgE.png)
-
-Указываем имя репозитория, ставим галочку **Initialize this repository with a README**
-
-![Alt text](https://monosnap.com/file/bpGRwhgDKz5iTNcXWKoHYvxodsM4nP.png)
-
-Изменяем readme.md файл используя MARKDOWN разметку: указываем в нем
-* Свое ФИО
-* Имя наставника
-* Название курса
-
-![Alt text](https://monosnap.com/file/qtzdUY2xLu4r8sApNO3XpyotzBGjR2.png)
-![Alt text](https://monosnap.com/file/cqESivcZuFx8NG62gL7dR5k1trO9bJ.png)
-![Alt text](https://monosnap.com/file/aRGLTa0NLKXmLKEkfQxuyWWowellc5.png)
-
-## 2. Работа с репозиторием на компьютере
-
-Копируем адресс репозитория тип соединения выбираем в зависимости от того настроен ли ssh доступ или нет, у меня настроен поэтому я выбираю с ssh. О том как его настроить можете посмотреть тут https://youtu.be/MnU1U7GCWLk
-
-![Alt text](https://monosnap.com/file/H5sqkqgaa2eGFnuDDTMukswyH0Ohoc.png)
+![Alt text](https://monosnap.com/image/05vq8WpL2a5ZHRI9Sz1LZ5NvyJ4RRA)
 
 Открываем терминал и заходим в папку с проектом
 
 Пишем (вместо адресса моего репозитория ставите то что скопировали):
 ```{r, engine='bash', count_lines}
-git clone git@github.com:MaxOrel/burgers.git
+git clone git@github.com:MaxOrel/BuilderBurger.git burger
 ```
-![Alt text](https://monosnap.com/file/2fYUM94hDLiloSZLq0EKbyJxwNjfv2.png)
+После чего в папке где вы сделали эту команду должны появиться папка со сборкой проекта
 
-Переходим в папку проекта и локально создаем новую ветку 
+![Alt text](https://monosnap.com/image/ZysGjK2XswbNRSIkroUkSp3FYZ3had)
+
+
+### 1.1 Создаем свой репозиторий
+
+Создаем новый репозиторий на github
+
+![Alt text](https://monosnap.com/file/09RNBVaoUeAxVHKKB0v8eAjOZzDJgE.png)
+
+## 2. Работа с репозиторием на компьютере
+
+### 2.1 Создаем связь с личным удаленным репозиторием
+Открываем терминал и заходим в папку с проектом (папка в которой есть папка .git)
+
+![Alt text](https://monosnap.com/image/ywneOkHjLECDwQGvXN9aFsZp0aQFmi)
+
+Далее выполняем связь своего удаленного репозитория с этой папкой, но командой которая вам предлагается на gitHub этого не получится сделать, т.к. при клонировании репозитория вы автоматические локальный привязали к репозиторию наставника. Эту связь разрушаем командой
+```{r, engine='bash', count_lines}
+git remote set-url origin git@github.com:MaxOrel/BuilderBurger.git
+```
+
+![Alt text](https://monosnap.com/image/o2fkvG5YSy4QrxYZnIA5xpkjoURPFC)
+
+После того как создали связь с личным репоиторием делаем команду
+```{r, engine='bash', count_lines}
+git push -u origin master
+```
+У вас запросит название аккаунта и пароль (если не подключен ssh), после корректного ввода произойдет загрузка файлов в ваш удаленный репозиторий.
+
+### 2.2 Создаем недельную ветку и начинаем разработку
+
+Переходим в папку проекта и локально создаем новую ветку (напоминаю корнем вашего проекта будет папка в которой лежит папка .git, не путайтесь, если какие-то вопросы пишите мне в личку) 
 
 ```{r, engine='bash', count_lines}
 git checkout -b week_1
 ```
-![Alt text](https://monosnap.com/file/LJhdKtYN08XTdVKHJ8TrNM5crtMv1X.png)
+![Alt text](https://monosnap.com/image/WIsQgyVyky3QYfw165HfKtJIeW6Nq8.png)
 
-Работаем в этой ветке (вставляем файлы из сохраненной папки, то что вы уже сверстали или сделали, если они раньше были)
+Работаем в этой ветке (вставляем файлы из сохраненной папки в сборку то, что вы уже сверстали или сделали или пишем с нуля если ничего не делали)
+
+Изменяем readme.md файл используя MARKDOWN разметку: указываем в нем
+* Свое ФИО
+* Имя наставника
+* Название курса
 
 ![Alt text](https://monosnap.com/file/ZhoN0rT4dxzN4j5pkOgkwgWGSgPsoh.png)
 
@@ -60,7 +77,7 @@ git commit -m "Текст коммита"
 
 Коммит создан
 
-Делаем push изменений в удаленный репозиторий 
+Делаем push изменений в удаленный репозиторий (ВНИМАТЕЛЬНО мы делаем пуш уже не в ветку MASTER, а в ветку week_1 она автоматически создаться в вашем личном удаленном репозитории если ее там нет)
 
 ```{r, engine='bash', count_lines}
 git push -u origin week_1
@@ -68,42 +85,38 @@ git push -u origin week_1
 
 ![Alt text](https://monosnap.com/file/47Bm5rH3pUDJ5a8xYV8GcWg5W3tkAE.png)
 
-## 3. Проверка работы
+## 3. Проверка работы и сдача работы наставнику
 
-Создаем новую ветку (важно находиться нужно на ветке week_1) на github называем ее gh-pages
+Для того чтобы показать работу настанику ее необходимо отобразить либо на хостинге, либо на Github Pages. Второй вариант предпочтительнее.
+
+Создаем новую ветку (ВАЖНО ветку создаем на удаленном репозитории и находиться нужно на ветке week_1) на github называем ее gh-pages
 ![Alt text](https://monosnap.com/file/1cZK9yuD5FPrkOuO6gSjWJFmZEex8o.png)
 ![Alt text](https://monosnap.com/file/ik7mdyA0ByFP8UghDbtrDObqVaEdjv.png)
 
 Заходим с настройки репозитория 
 1. Переходим на вкладку settings
 2. Выбираем ветку gh-pages. Нажимаем save
-3. Копируем получившуюся ссылку
 
 ![Alt text](https://monosnap.com/file/jP1BuGbGMATPoWB0tWOFOvJh8Bqt1j.png)
-
-Возвращаемся во вкладку обзора репозитория, **обращаем внимание что бы находились в ветке week_1**, дописываем ссылку в README
-*(Файл редактируется так же, как и в первый раз см. пару пунктов выше)*
-![Alt text](https://monosnap.com/file/JeT23fkdKv0fI6hPRAmEJ9ziMIuWtJ.png)
 
 Создаем pull request из week_1 в master
 ![Alt text](https://monosnap.com/file/E3IIu5ayJz969heCqVZIXKDAopCBBn.png)
 ![Alt text](https://monosnap.com/file/Irfj8sxDB3Z5KEe3AF82LcAD0vBVhq.png)
 
-Получаем ветку week_1 на свой локальный компьютер, мы же удаленно поменяли файл readme.md теперь локально и удаленно у нас ветки отличаются, чтобы это исправить делаем git pull
-
-```{r, engine='bash', count_lines}
-git pull origin week_1
-```
-![Alt text](https://monosnap.com/file/co3Ugd1Jzyem7Goxk9LuiKF4ajIDNl.png)
-
 ### Публикуем изменения на github pages ###
 
-После того как мы поработали локально в недельной ветке, т.е. например вы что-то доработали и хотите сдать мне на проверку в консоли пишем 
+После того как мы поработали локально в недельной ветке, т.е. например вы что-то доработали или исправили и хотите сдать мне на проверку в консоли пишем 
 
+(Это если у вас локально что-то изменилось)
 ```{r, engine='bash', count_lines}
+git push origin week_1
+```
+Потом обновляем то что в ветке gh-pages на удаленном.
+```{r, engine='bash', count_lines}
+git push origin week_1
 git push origin week_1:gh-pages
 ```
-*week_1 заменяем на текущую недельную ветку*. Таким образом все актуальные изменения мы заливаем на gh-pages и они будут доступны по ссылке которую мы писали в readme.md
+*week_1 заменяем на текущую недельную ветку*. Таким образом все актуальные изменения мы заливаем на gh-pages и они будут доступны по ссылке которую вы пришлете наставнику.
 
 ![Alt text](https://monosnap.com/file/2nPgbMhUh6Y1FMMeysVwlOdTAR8p7G.png)
 
