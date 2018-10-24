@@ -7,6 +7,8 @@
 
 ## 1. Клонирование репозитория наставнка и создание своего
 
+#### Данный пункт выполняем, если решили делать работу с gulp сборкой, если не используете gulp можете сразу переходить у пункту 1.1
+
 Копируем адрес репозитория тип соединения не важен т.к. к моему репозиторию у вас доступа не будет. Но для своего репозитория о том как его настроить можете посмотреть тут https://youtu.be/MnU1U7GCWLk
 
 ![Alt text](https://monosnap.com/image/05vq8WpL2a5ZHRI9Sz1LZ5NvyJ4RRA)
@@ -23,7 +25,7 @@ git clone git@github.com:MaxOrel/BuilderBurger.git burger
 ![Alt text](https://monosnap.com/image/ZysGjK2XswbNRSIkroUkSp3FYZ3had)
 
 
-### 1.1 Создаем свой репозиторий
+### 1.1 Создаем свой удаленный репозиторий
 
 Создаем новый репозиторий на github
 
@@ -44,7 +46,12 @@ git remote set-url origin git@github.com:unosmart/burger.git
 
 ![Alt text](https://monosnap.com/image/o2fkvG5YSy4QrxYZnIA5xpkjoURPFC)
 
-После того как создали связь с личным репоиторием делаем команду
+Если не клонировали мой репозиторий с gulp сборкой, то выполняем команду которая подсказывается при создании репозитория
+```{r, engine='bash', count_lines}
+git remote add origin git@github.com:unosmart/burger.git
+```
+
+После того как создали связь с личным репозиторием делаем команду
 ```{r, engine='bash', count_lines}
 git push -u origin master
 ```
