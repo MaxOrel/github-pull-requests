@@ -11,7 +11,7 @@
 
 Копируем адрес репозитория тип соединения не важен т.к. к моему репозиторию у вас доступа не будет. Но для своего репозитория о том как его настроить можете посмотреть тут https://youtu.be/MnU1U7GCWLk
 
-![Alt text](https://monosnap.com/image/05vq8WpL2a5ZHRI9Sz1LZ5NvyJ4RRA)
+![Alt text](https://portomebel.ru/upload/loft/1.png)
 
 Открываем терминал и заходим в папку с проектом
 
@@ -22,21 +22,21 @@ git clone git@github.com:MaxOrel/BuilderBurger.git burger
 
 После чего в папке, где вы сделали эту команду должны появиться папка со сборкой проекта
 
-![Alt text](https://monosnap.com/image/ZysGjK2XswbNRSIkroUkSp3FYZ3had)
+![Alt text](https://portomebel.ru/upload/loft/2.png)
 
 
 ### 1.1 Создаем свой удаленный репозиторий
 
 Создаем новый репозиторий на github
 
-![Alt text](https://monosnap.com/file/09RNBVaoUeAxVHKKB0v8eAjOZzDJgE.png)
+![Alt text](https://portomebel.ru/upload/loft/3.png)
 
 ## 2. Работа с репозиторием на компьютере
 
 ### 2.1 Создаем связь с личным удаленным репозиторием
 Открываем терминал и заходим в папку с проектом (папка в которой есть папка .git)
 
-![Alt text](https://monosnap.com/image/ywneOkHjLECDwQGvXN9aFsZp0aQFmi)
+![Alt text](https://portomebel.ru/upload/loft/4.png)
 
 Далее выполняем связь своего удаленного репозитория с этой папкой, но командой которая вам предлагается на gitHub этого не получится сделать, т.к. при клонировании репозитория вы автоматические локальный привязали к репозиторию наставника. Эту связь разрушаем командой
 ```{r, engine='bash', count_lines}
@@ -44,7 +44,7 @@ git remote set-url origin git@github.com:unosmart/burger.git
 ```
 Где git@github.com:unosmart/burger.git - ваш репозиторий
 
-![Alt text](https://monosnap.com/image/o2fkvG5YSy4QrxYZnIA5xpkjoURPFC)
+![Alt text](https://portomebel.ru/upload/loft/5.png)
 
 Если не клонировали мой репозиторий с gulp сборкой, то выполняем команду которая подсказывается при создании репозитория
 ```{r, engine='bash', count_lines}
@@ -64,7 +64,7 @@ git push -u origin master
 ```{r, engine='bash', count_lines}
 git checkout -b week_1
 ```
-![Alt text](https://monosnap.com/image/WIsQgyVyky3QYfw165HfKtJIeW6Nq8.png)
+![Alt text](https://portomebel.ru/upload/loft/6.png)
 
 Работаем в этой ветке (вставляем файлы из сохраненной папки в сборку то, что вы уже сверстали или сделали или пишем с нуля если ничего не делали)
 
@@ -73,7 +73,7 @@ git checkout -b week_1
 * Имя наставника
 * Название курса
 
-![Alt text](https://monosnap.com/file/ZhoN0rT4dxzN4j5pkOgkwgWGSgPsoh.png)
+![Alt text](https://portomebel.ru/upload/loft/7.png)
 
 После делаем, только всегда смотрите в какой ветке вы находитесь в данном случае мы пока в week_1
 
@@ -82,7 +82,7 @@ git add .
 git commit -m "Текст коммита"
 ```
 
-![Alt text](https://monosnap.com/file/ZmMy24oXEziI6svQ4jiVDFKUce8yqV.png)
+![Alt text](https://portomebel.ru/upload/loft/8.png)
 
 Коммит создан
 
@@ -92,7 +92,7 @@ git commit -m "Текст коммита"
 git push -u origin week_1
 ```
 
-![Alt text](https://monosnap.com/file/47Bm5rH3pUDJ5a8xYV8GcWg5W3tkAE.png)
+![Alt text](https://portomebel.ru/upload/loft/9.png)
 
 ## 3. Проверка работы и сдача работы наставнику
 
@@ -100,18 +100,18 @@ git push -u origin week_1
 
 Создаем новую ветку (ВАЖНО ветку создаем на удаленном репозитории и находиться нужно на ветке week_1) на github называем ее gh-pages
 
-![Alt text](https://monosnap.com/file/1cZK9yuD5FPrkOuO6gSjWJFmZEex8o.png)
-![Alt text](https://monosnap.com/file/ik7mdyA0ByFP8UghDbtrDObqVaEdjv.png)
+![Alt text](https://portomebel.ru/upload/loft/10.png)
+![Alt text](https://portomebel.ru/upload/loft/11.png)
 
 Заходим с настройки репозитория 
 1. Переходим на вкладку settings
 2. Выбираем ветку gh-pages. Нажимаем save
 
-![Alt text](https://monosnap.com/file/jP1BuGbGMATPoWB0tWOFOvJh8Bqt1j.png)
+![Alt text](https://portomebel.ru/upload/loft/12.png)
 
 Создаем pull request из week_1 в master
-![Alt text](https://monosnap.com/file/E3IIu5ayJz969heCqVZIXKDAopCBBn.png)
-![Alt text](https://monosnap.com/file/Irfj8sxDB3Z5KEe3AF82LcAD0vBVhq.png)
+![Alt text](https://portomebel.ru/upload/loft/13.png)
+![Alt text](https://portomebel.ru/upload/loft/14.png)
 
 ### Публикуем изменения на github pages ###
 
@@ -128,11 +128,11 @@ git push origin week_1:gh-pages
 ```
 *week_1 заменяем на текущую недельную ветку*. Таким образом все актуальные изменения мы заливаем на gh-pages и они будут доступны по ссылке которую вы пришлете наставнику.
 
-![Alt text](https://monosnap.com/file/2nPgbMhUh6Y1FMMeysVwlOdTAR8p7G.png)
+![Alt text](https://portomebel.ru/upload/loft/15.png)
 
 На гите появится вот такая запись 
 
-![Alt text](https://monosnap.com/file/78CzTAbrGBJ2r63ThgmuoNO9gzVyqq.png)
+![Alt text](https://portomebel.ru/upload/loft/16.png)
 
 ### Добавляем настаника в collaborators ###
 1. Открываем вкладку Settings
@@ -140,7 +140,7 @@ git push origin week_1:gh-pages
 3. Пишем ник настаника 
 4. Жмем на кнопку
 
-![Alt text](https://monosnap.com/file/oqwoZDGLf9mHzJJzizjO3sVVijb1Xn.png)
+![Alt text](https://portomebel.ru/upload/loft/17.png)
 
 ### Пишем наставнику, что все сделали, ждем ответа. ###
 
