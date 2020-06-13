@@ -38,18 +38,11 @@ git clone git@github.com:MaxOrel/BuilderBurger.git burger
 
 ![Alt text](https://portomebel.ru/upload/loft/4.png)
 
-Далее выполняем связь своего удаленного репозитория с этой папкой, но командой которая вам предлагается на gitHub этого не получится сделать, т.к. при клонировании репозитория вы автоматические локальный привязали к репозиторию наставника. Эту связь разрушаем командой
-```{r, engine='bash', count_lines}
-git remote set-url origin git@github.com:unosmart/burger.git
-```
-Где git@github.com:unosmart/burger.git - ваш репозиторий
-
-![Alt text](https://portomebel.ru/upload/loft/5.png)
-
-Если не клонировали мой репозиторий с gulp сборкой, то выполняем команду которая подсказывается при создании репозитория
+Далее выполняем связь своего удаленного репозитория с этой папкой:
 ```{r, engine='bash', count_lines}
 git remote add origin git@github.com:unosmart/burger.git
 ```
+Где git@github.com:unosmart/burger.git - ваш репозиторий
 
 После того как создали связь с личным репозиторием делаем команду
 ```{r, engine='bash', count_lines}
